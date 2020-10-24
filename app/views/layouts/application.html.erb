@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SampleApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<head>
+<meta charset="utf-8">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag 'application', media: 'all',
+'data-turbolinkstrack': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinkstrack': 'reload' %>
+<%= rander 'layouts/shim'%>
+</head>
+<body>
+<%= rander 'layouts/header'%>
+<div class="container">
+<%= yield %>
+</div>
+</body>
+</html
