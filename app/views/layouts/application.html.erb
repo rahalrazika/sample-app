@@ -7,12 +7,13 @@
 <%= stylesheet_link_tag 'application', media: 'all',
 'data-turbolinkstrack': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinkstrack': 'reload' %>
-<%= rander 'layouts/shim'%>
+<%= render 'layouts/shim'%>
 </head>
 <body>
-<%= rander 'layouts/header'%>
+<%= render 'layouts/header'%>
 <div class="container">
 <%= yield %>
+<%= render 'layouts/footer'%>
 </div>
 </body>
 </html
