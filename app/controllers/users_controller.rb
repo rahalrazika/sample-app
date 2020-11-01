@@ -8,6 +8,8 @@ def index
 end
 def show
   @user = User.find(params[:id])
+  @microposts = @user.microposts.paginate(page: params[:page])
+
 end
 
 def new
@@ -43,6 +45,8 @@ def destroy
   flash[:success] = "User deleted"
   redirect_to users_url
 end
+
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password,
@@ -50,14 +54,7 @@ private
   end
 
   #before filtres 
-  #confirm a logged-in user 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "please log in "
-      redirect_to login_url 
-    end    
-  end
+
   # Confirms the correct user.
 def correct_user
   @user = User.find(params[:id])
